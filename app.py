@@ -9,20 +9,13 @@ from flask_cors import cross_origin
 app = Flask(__name__)
 
 #Loading the model from pickle file
-model = pickle.load(open('rf.pkl', 'rb'))
+# model = pickle.load(open('rf.pkl', 'rb'))
 
 
-# geting and sending response to dialogflow
-@app.route('/webhook', methods=['POST','GET'])
-# @cross_origin()
-def webhook():
-    # req = request.get_json(silent=True, force=True)
-    # res = processRequest(req)
-    # res = json.dumps(res, indent=4)
-    # r = make_response(res)
-    # r.headers['Content-Type'] = 'application/json'
-    return "AAAAAAAAAA"
 
+@app.route('/', methods=['POST','GET'])
+def main():
+    return 'Deploy Model Tutorial'
 # processing the request from dialogflow
 def processRequest(req):
     result = req.get("queryResult")
