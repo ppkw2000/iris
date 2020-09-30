@@ -13,14 +13,14 @@ model = pickle.load(open('rf.pkl', 'rb'))
 
 
 # geting and sending response to dialogflow
-@app.route('/webhook', methods=['POST'])
-@cross_origin()
+@app.route('/webhook', methods=['POST','GET'])
+# @cross_origin()
 def webhook():
-    req = request.get_json(silent=True, force=True)
-    res = processRequest(req)
-    res = json.dumps(res, indent=4)
-    r = make_response(res)
-    r.headers['Content-Type'] = 'application/json'
+    # req = request.get_json(silent=True, force=True)
+    # res = processRequest(req)
+    # res = json.dumps(res, indent=4)
+    # r = make_response(res)
+    # r.headers['Content-Type'] = 'application/json'
     return "AAAAAAAAAA"
 
 # processing the request from dialogflow
